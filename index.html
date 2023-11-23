@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tender Calculator</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .mainSection{
+        display: flex;
+    }
+    .inputContainer{
+        display: flex;
+        flex-direction: column;
+        margin-left: 10%;
+        margin-top: 2%;
+    }
+    input{
+        width: 80%;
+        height: 60px;
+        border: 1px orange solid;
+        border-radius: 5px;
+        margin-right: 20px;
+        padding: 10px;
+        margin-top: 0.7em;
+        color: red;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+    }
+    input:focus{
+        outline: 3px orange solid;
+    }
+    input::placeholder{
+        color: rgb(250, 135, 135);
+        text-transform: capitalize;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 1em;
+    }
+    #input[type="number"] {
+        font-family: Arial, Helvetica, sans-serif;
+        color: red;
+    }
+    .buttonSection{
+        width: 30%;
+        margin-top: 8em;
+        margin-left: 10%;
+
+    }
+    button{
+        width: 30%;
+        height: 1.8em;
+        margin-right: 0.5em;
+        border: none;
+        color: white;
+        background-color: red;
+        font-size: 4em;
+        border-radius: 10px;
+    }
+    button:hover{
+        background-color: orange;
+    }
+    .buttonSection :nth-child(3){
+        margin-top: 0.5em;
+    }
+    h1{
+        color: orangered;
+        margin-left: 10%;
+        font-family: sans-serif;
+        font-size: 1.9em;
+        margin-top: 10px;
+    }
+    .calTitle{
+        font-family: 'Dancing Script', cursive;
+        font-size: 2.2em;
+        margin-left: 10%;
+        color: orangered;
+        text-shadow: orange 1px 1px;
+        margin-top: 0.5em;
+        margin-bottom: 2em;
+    }
+    .section1{
+        width: 45%;
+    }
+    @media screen and (max-width:478px) {
+        h1{
+            margin-left: 7%;
+        }
+        input{
+        width: 90%;
+        height: 38px;
+        margin-left: 0;
+        }
+        .buttonSection{
+        width: 100%;
+        margin-top: 3em;
+        margin-left: 5%;
+        }
+        .inputContainer{
+        display: flex;
+        flex-direction: column;
+        margin-left: 5%;
+        margin-top: 2%;
+        width: 100%; 
+    }
+    .calTitle{
+        margin-bottom: 0;
+    }
+    .mainSection{
+        flex-direction: column;
+    }
+    .section1{
+        width: 100%;
+    }
+    }
+</style>
+<body>
+    <section class="mainSection">
+        <div class="section1">
+            <p class="calTitle">Tender Calculator</p>
+
+            <div class="inputContainer">
+                <input type="number" placeholder="first number" id="firstNumber">
+                <input type="number" placeholder="second number" id="secondNumber">
+            </div>
+        
+            <div>
+                <h1 id="equallity"></h1>
+            </div>
+        </div>
+    
+        <section class="buttonSection">
+            <button onclick="sum()">+</button>
+            <button onclick="sub()">-</button>
+            <button onclick="multiplication()">⨉</button>
+            <button onclick="division()">÷</button>
+        </section>
+    </section>
+    
+    <script>
+        function sum() {
+            var valueOne = Number(document.getElementById("firstNumber").value)
+            var valueTwo = Number(document.getElementById("secondNumber").value)
+            var answer = valueOne + valueTwo
+            document.getElementById("equallity").innerHTML = answer
+        }
+        function sub() {
+            var valueOne = Number(document.getElementById("firstNumber").value)
+            var valueTwo = Number(document.getElementById("secondNumber").value)
+            var answer = valueOne - valueTwo
+            document.getElementById("equallity").innerHTML = answer
+        }
+        function multiplication() {
+            var valueOne = Number(document.getElementById("firstNumber").value)
+            var valueTwo = Number(document.getElementById("secondNumber").value)
+            var answer = valueOne * valueTwo
+            document.getElementById("equallity").innerHTML = answer
+        }
+        function division() {
+            var valueOne = Number(document.getElementById("firstNumber").value)
+            var valueTwo = Number(document.getElementById("secondNumber").value)
+            var answer = valueOne / valueTwo
+            document.getElementById("equallity").innerHTML = answer
+        }
+    </script>
+</body>
+</html>
